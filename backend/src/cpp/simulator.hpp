@@ -42,8 +42,9 @@ public:
     std::vector<LapRecord> race_history;
     RaceSimulator();
     void add_car(const std::string &name, StrategyWithGap strategy, double initial_fuel);
+    void simulate_one_lap(Action &a);
     void simulate_race(int total_laps);
     void print_results();
 };
 
-#endif
+#endif  
