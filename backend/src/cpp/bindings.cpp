@@ -4,10 +4,6 @@
 #include "engine.hpp"
 #include "simulator.hpp"
 
-/*
-// g++ -O3 -Wall -shared -std=c++17 -fPIC $(python3 -m pybind11 --includes) \
-    bindings.cpp engine.cpp simulator.cpp \
-    -o race_engine$(python3-config --extension-suffix)*/
 namespace py = pybind11;
 
 PYBIND11_MODULE(race_engine, m) {
@@ -26,7 +22,7 @@ PYBIND11_MODULE(race_engine, m) {
     py::class_<State>(m, "State")
         .def_readonly("lap", &State::lap)
         .def_readonly("tire", &State::tire)
-        .def_readonly("tire_age", &State::tire_age) // Now correctly reflects double precision
+        .def_readonly("tire_age", &State::tire_age)
         .def_readonly("fuel", &State::fuel)
         .def_readonly("total_time", &State::total_time);
 
@@ -64,6 +60,7 @@ PYBIND11_MODULE(race_engine, m) {
     py::class_<RaceSimulator>(m, "RaceSimulator")
         .def(py::init<>())
         .def("add_car", &RaceSimulator::add_car)
+        .def("simulate_one_lap", &RaceSimulator::simulate_one_lap) // <-- THIS IS THE MISSING LINK
         .def("simulate_race", &RaceSimulator::simulate_race)
         .def("print_results", &RaceSimulator::print_results)
         .def_readonly("race_history", &RaceSimulator::race_history);

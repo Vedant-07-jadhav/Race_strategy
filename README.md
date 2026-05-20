@@ -1,0 +1,1 @@
+I built a custom C++ physics engine, bridged it to Python, and trained an RL agent. Interestingly, I encountered 'Reward Myopia' where the agent got stuck in a local optimum—refusing to pit to avoid the immediate 22-second penalty. To fix it in the future, I would need to tune the Gamma discount factor or implement a sparse reward based on final race placement

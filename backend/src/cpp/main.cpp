@@ -1,5 +1,5 @@
 #include "simulator.hpp"
-#include <iostream>
+
 
 Action drs_train_follower(const State& s, double gap) {
     if (gap > 0.0 && gap < 1.5 && s.tire_age < 28) return {false, "Soft"}; 
@@ -15,6 +15,8 @@ Action defensive_leader(const State& s, double gap) {
     if (gap < 0 && gap > -1.2 && s.tire_age > 15) return {true, "Medium"}; 
     return (s.tire_age > 25) ? Action{true, "Hard"} : Action{false, "Soft"};
 }
+
+
 
 
 
