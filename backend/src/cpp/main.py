@@ -8,7 +8,7 @@ import RL
 if __name__ == "__main__":
   env = RL.RaceEnv()
   
-  model = PPO.load("f1_rl_strategist")
+  model = PPO.load("f1_rl_strategist_pro")
   obs, info = env.reset()
   done = False
   

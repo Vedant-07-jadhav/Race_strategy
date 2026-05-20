@@ -3,7 +3,7 @@ from stable_baselines3 import PPO
 import numpy as np
 
 # 1. Load the fully optimized model
-model = PPO.load("f1_rl_strategist", device="cpu")
+model = PPO.load("f1_rl_strategist_pro", device="cpu")
 
 # 2. Fresh standalone simulator setup
 sim = race_engine.RaceSimulator()

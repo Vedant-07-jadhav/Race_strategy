@@ -46,10 +46,19 @@ class RaceEnv(gym.Env):
             
         lap_time = hist.car_times[self.agent_name] - prev_time
         
-        # Base Reward: Minimize cumulative lap time delta
-        reward = -lap_time
+        reward = 90.0 -lap_time
         
-        # Dynamic Objective Reward
+        tire_age = hist.car_tire_ages[self.agent_name]
+        
+        if bool(action[0]) == True:
+            if(tire_age>15):
+                reward +=100.0
+            else:
+                reward-=50.0 
+        if(tire_age>25):
+            reward-=150.0
+        
+        
         if hist.leader_name == self.agent_name:
             reward += 10.0  # Increased reward incentive for taking/holding the lead
         
@@ -64,20 +73,16 @@ class RaceEnv(gym.Env):
         lap = float(hist.lap)
         tire_age = float(hist.car_tire_ages[self.agent_name])
         
-        # Calculate dynamic timeline variance offset
         gap = float(hist.car_times[self.agent_name] - hist.car_times[hist.leader_name])
         
-        # ✅ FIXED: Now returning the actual physical variables with the correct shape (3,)
         return np.array([lap, tire_age, gap], dtype=np.float32)
 
 if __name__ == "__main__":
     env = RaceEnv()
     
     print("--- TRAINING THE RL AGENT ON CPU ---")
-    # Forcing device="cpu" to eliminate PCIe bus latency bottlenecks 
-    model = PPO("MlpPolicy", env, verbose=1, device="cpu")
+    model = PPO("MlpPolicy", env, verbose=1, device="cpu", gamma=0.999, ent_coef=0.02)
     
-    # 200,000 steps is perfect for a quick, functional check on a 2-car matrix grid
-    model.learn(total_timesteps=200000) 
-    model.save("f1_rl_strategist")
+    model.learn(total_timesteps=100000) 
+    model.save("f1_rl_strategist_pro")
     print("Model Optimized & Saved Successfully.\n")
