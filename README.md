@@ -140,22 +140,3 @@ You can also run the package entry points directly:
 python3 -m race.train
 python3 -m race.play
 ```
-<!-- 
-## What To Keep Out Of Git
-
-These are generated or local-only files and should stay untracked:
-
-- `build/`
-- `__pycache__/`
-- compiled `.so` files
-- `*.zip` model checkpoints
-- `*.png` plots and exported figures
-- local editor settings such as `.vscode/` -->
-
-## Important Notes
-
-- The experimental scripts are intentionally still present in `backend/src/cpp/`.
-- The root Python entry points are thin wrappers so older commands still work.
-- The `race/` package is the clean reusable layer to build on going forward.
-- If you want, the next step is a careful rename pass for typo files like `simulattion.py` and `visulaise.py`, but I have not changed those without your explicit approval.
-
