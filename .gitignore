@@ -1,4 +1,6 @@
 venv/
+.venv/
+.pytest_cache/
 .vscode/
 __pycache__/
 *.pytest_cache/
@@ -23,6 +25,8 @@ f1_rl_strategist*.zip
 *.zip
 *.png
 build/
+outputs/experiments/*
+!outputs/experiments/.gitkeep
 plots/
 models/
 logs/

@@ -1,0 +1,14 @@
+# Permanent Research Experiment Journal
+
+Chronological ledger of every simulated race, DP baseline benchmark, and RL training experiment.
+
+| Date | Run ID | Experiment | Status | Duration | Report | Notes |
+|---|---|---|---|---|---|---|
+| 2026-11-19 19:02 | `baseline_dp_mc` | Controlled Clean-Air DP vs Heuristics | **Passed** | 6.5s | [Benchmark Suite](file:///Users/vedant/Code/projects/Race_strategy/experiments/benchmark_suite.py) | Verified DP optimal achieves 4729.59s vs Aggressive 4746.50s / Conservative 4766.55s |
+| 2026-11-19 19:31 | `run_20261119_193114_2a569a` | ppo_v2_training | **Passed** | 1.4s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_193114_2a569a/summary.md) | Trained PPO v2 for 500 steps. Evaluation race completed in 5034.99s with 0 pit stop(s) and cumulative reward of -2834.99. |
+| 2026-11-19 19:32 | `run_20261119_193214_a03119` | clean_air_benchmarks | **Passed** | 0.3s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_193214_a03119/summary.md) | DP Optimal benchmark completed across 30 trials. DP Mean: 4729.59s. Aggressive Soft delta: +16.90s. Conservative Hard delta: +36.96s. |
+| 2026-11-19 19:33 | `run_20261119_193313_e291b9` | multi_agent_22car_eval | **Passed** | 0.7s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_193313_e291b9/summary.md) | 22-car simulation completed. Winner: AI_Driver_14 with total race time of 2399.12s. Field completed 22 pit stops. |
+| 2026-11-19 19:37 | `run_20261119_193701_0b5715` | clean_air_benchmarks | **Passed** | 0.3s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_193701_0b5715/summary.md) | DP Optimal benchmark completed across 30 trials. DP Mean: 4729.59s. Aggressive Soft delta: +16.90s. Conservative Hard delta: +36.96s. |
+| 2026-11-19 19:37 | `run_20261119_193712_a5c8f7` | multi_agent_22car_eval | **Passed** | 0.7s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_193712_a5c8f7/summary.md) | 22-car simulation completed. Winner: AI_Driver_6 with total race time of 4702.33s. Field completed 44 pit stops. |
+| 2026-11-19 19:37 | `run_20261119_193754_e776f3` | ppo_v2_training | **Passed** | 2.4s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_193754_e776f3/summary.md) | Trained PPO v2 for 5000 steps. Evaluation race completed in 5034.99s with 0 pit stop(s) and cumulative reward of -2834.99. |
+| 2026-11-19 22:55 | `run_20261119_225557_f13fd2` | dashboard_simulation | **Passed** | 1.2s | [Summary](file:///Users/vedant/Code/projects/Race_strategy/outputs/experiments/run_20261119_225557_f13fd2/summary.md) | Dashboard simulation run completed with 22 cars. |
