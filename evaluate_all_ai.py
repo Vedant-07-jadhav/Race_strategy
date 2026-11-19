@@ -1,5 +1,4 @@
-from experiments.evaluate_all_ai import main
-
+from race.evaluation.evaluate import main
 
 if __name__ == "__main__":
     main()

@@ -1,17 +1,6 @@
-from stable_baselines3 import PPO
+"""Backward compatibility shim for train."""
 
-from race.env import RaceEnv
-
-
-def main():
-    env = RaceEnv()
-
-    print("--- TRAINING THE RL AGENT ON CPU ---")
-    model = PPO("MlpPolicy", env, verbose=1, device="cpu", gamma=0.999, ent_coef=0.02)
-    model.learn(total_timesteps=100000)
-    model.save("f1_rl_strategist_pro")
-    print("Model Optimized & Saved Successfully.\n")
-
+from race.training.train import main
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,8 @@ import sys
 
 def ensure_project_paths() -> Path:
     root = Path(__file__).resolve().parents[1]
-    for candidate in (root, root / "build", root / "backend" / "src" / "cpp"):
+    # Prioritize build/ so compiled macOS native extensions take precedence
+    for candidate in (root / "build", root):
         if candidate.exists():
             candidate_str = str(candidate)
             if candidate_str not in sys.path:
